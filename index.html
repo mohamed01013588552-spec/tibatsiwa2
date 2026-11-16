@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>طيبات سيوة | منيو زيت الزيتون البكر وتمور الواحة الفاخرة</title>
+  <!-- خطوط عربية عصرية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- مكتبة الأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- ربط ملف التنسيق -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- شريط التنقل العلوي -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-content">
+ <a href="#" class="brand">
+  <div class="brand-logo-wrap">
+    <img src="صور/LOGO.jpeg"شعار طيبات سيوة" class="brand-logo" />
+  </div>
+  <div class="brand-text">
+    <span class="brand-title">طيبات سيوة</span>
+    <span class="brand-sub">من قلب الواحة إلى مائدتك</span>
+  </div>
+</a>
+      <nav class="nav-links">
+        <a href="#hero">الرئيسية</a>
+        <a href="#menu">قائمة المنتجات</a>
+        <a href="#quality">سر الجودة</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <button class="cart-trigger" id="openCartBtn" aria-label="سلة الطلبات">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <span>السلة</span>
+        <span class="cart-badge" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- القسم الترحيبي (Hero) -->
+  <section class="hero" id="hero">
+    <div class="floating-elements">
+      <i class="fa-solid fa-seedling float-item item-1"></i>
+      <i class="fa-brands fa-pagelines float-item item-2"></i>
+      <i class="fa-solid fa-droplet float-item item-3"></i>
+      <i class="fa-solid fa-spa float-item item-4"></i>
+    </div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="badge-pill">✨ قطفة الموسم الجديد — طبيعي 100%</span>
+        <h1>خيرات <span class="gold-text">واحة سيوة</span> الأصيلة بين يديك</h1>
+        <p>
+          ننتقي لك أجود أنواع زيت الزيتون البكر الممتاز المعصور على البارد، وأفخر تمور سيوة (المجدول، الصعيدي، الفريحي) مباشرة من مزارع الواحة.
+        </p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-gold">
+            <span>تصفح المنيو واطلب الآن</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+          <a href="https://wa.me/201505808824" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>استفسر عبر واتساب</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-card-showcase">
+          <div class="glow-ring"></div>
+          <img src="صور/OIL.jpg" alt="زيت زيتون سيوة البكر" />
+          <div class="floating-badge top-badge">
+            <i class="fa-solid fa-award"></i>
+            <div>
+              <strong>عصرة أولى على البارد</strong>
+              <span>حموضة أقل من 0.8%</span>
+            </div>
+          </div>
+          <div class="floating-badge bottom-badge">
+            <i class="fa-solid fa-truck-fast"></i>
+            <div>
+              <strong>توصيل سريع وآمن</strong>
+              <span>لجميع محافظات مصر</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم المنيو التفاعلي -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">قائمة المنتجات والأسعار</span>
+        <h2>منيو <span class="teal-text">طيبات سيوة</span></h2>
+        <p>اختر القسم المناسب، حدد الوزن أو العبوة المفضلة، وأضف طلبك للسلة بضغطة واحدة</p>
+      </div>
+
+      <!-- أزرار الفلترة -->
+      <div class="filter-tabs reveal" id="filterTabs">
+        <button class="tab-btn active" data-filter="all">الكل</button>
+        <button class="tab-btn" data-filter="olive-oil">زيت الزيتون البكر</button>
+        <button class="tab-btn" data-filter="dates">تمور سيوة الفاخرة</button>
+        <button class="tab-btn" data-filter="olive">زيتون سيوه المخلل</button>
+        <button class="tab-btn" data-filter="Skin and Hair Care">منتجات العناية بالبشرة والشعر</button>
+      </div>
+
+      <!-- شبكة عرض المنتجات (تُملأ تلقائياً عبر JS) -->
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- قسم مميزات الجودة -->
+  <section class="quality-section" id="quality">
+    <div class="container">
+      <div class="quality-grid">
+        <div class="quality-card reveal">
+          <div class="q-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h3>عصر على البارد</h3>
+          <p>نحافظ على كامل القيمة الغذائية ومضادات الأكسدة والنكهة السيوية الأصيلة دون أي إضافات.</p>
+        </div>
+        <div class="quality-card reveal">
+          <div class="q-icon"><i class="fa-solid fa-sun"></i></div>
+          <h3>نضج طبيعي تحت شمس الواحة</h3>
+          <p>تمورنا تُجنى في ذروة نضجها وتُفرز يدوياً بعناية فائقة لضمان أعلى درجات الطراوة والطعم.</p>
+        </div>
+        <div class="quality-card reveal">
+          <div class="q-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>تغليف محكم وآمن</h3>
+          <p>عبوات زجاجية داكنة للزيوت وعلب محكمة الإغلاق للتمور تحفظ الطزاجة حتى باب منزلك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الفوتر -->
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <span class="brand-icon"><i class="fa-solid fa-leaf"></i></span>
+          <span class="brand-title">طيبات سيوة</span>
+        </div>
+        <p class="footer-desc">
+          متجر متخصص في توريد وتوزيع أجود منتجات واحة سيوة الطبيعية من زيت الزيتون البكر والتمور الفاخرة.
+        </p>
+      </div>
+
+      <div>
+        <h4>تواصل مباشر للطلبات</h4>
+        <ul class="contact-list">
+          <li><i class="fa-brands fa-whatsapp"></i> واتساب: <a href="https://wa.me/201505808824" target="_blank" rel="noopener noreferrer">01505808824</a></li>
+          <li><i class="fa-solid fa-phone"></i> اتصال هاتفي: <a href="tel:01092601746">01092601746</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>إدارة المتجر</h4>
+        <p class="management-info">
+          إدارة: <strong>أ. محمد الخولي</strong> & <strong>م. رائد الحليسي</strong><br />
+          التوريد المباشر من واحة سيوة لجميع المحافظات.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 طيبات سيوة — جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- قائمة التواصل العائمة (FAB) -->
+  <div class="fab-container" id="fabContainer">
+    <div class="fab-menu">
+      <a href="https://wa.me/201505808824" target="_blank" rel="noopener noreferrer" class="fab-item whatsapp" title="واتساب">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="tel:01092601746" class="fab-item phone" title="اتصال">
+        <i class="fa-solid fa-phone"></i>
+      </a>
+      <a href="#menu" class="fab-item menu-jump" title="المنيو">
+        <i class="fa-solid fa-utensils"></i>
+      </a>
+    </div>
+    <button class="fab-main" id="fabToggle" aria-label="تواصل معنا">
+      <i class="fa-solid fa-headset"></i>
+    </button>
+  </div>
+
+  <!-- السلة الجانبية (Drawer) -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> سلة طلباتك</h3>
+      <button class="close-cart" id="closeCartBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="cart-items" id="cartItemsContainer">
+      <div class="empty-cart">السلة فارغة حالياً.. اختر منتجاتك من المنيو!</div>
+    </div>
+
+    <div class="cart-footer">
+      <div class="customer-fields">
+        <input type="text" id="customerName" placeholder="الاسم بالكامل *" required />
+        <input type="text" id="customerAddress" placeholder="المحافظة والعنوان بالتفصيل *" required />
+        <input type="text" id="customerNotes" placeholder="ملاحظات إضافية (اختياري)" />
+      </div>
+
+      <div class="cart-total-row">
+        <span>الإجمالي التقديري:</span>
+        <strong id="cartTotal">0 ج.م</strong>
+      </div>
+
+      <button class="btn btn-whatsapp-checkout" id="checkoutBtn">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>إرسال الطلب عبر واتساب</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- نافذة عرض الصورة المكبرة (Lightbox) -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fa-solid fa-xmark"></i></button>
+    <img src="" alt="معاينة المنتج" id="lightboxImg" />
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <!-- إشعار إضافة للسلة (Toast) -->
+  <div class="toast" id="toast">تمت إضافة المنتج إلى السلة بنجاح!</div>
+
+  <!-- ربط ملف الجافا سكريبت -->
+  <script src="script.js"></script>
+</body>
+</html>
